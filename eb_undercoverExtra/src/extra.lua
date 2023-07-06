@@ -55,9 +55,10 @@ RegisterCommand('beacon', function()
                             end
                             Notify('~y~Beacon added!')
                         end
-                        break
+                        return
                     end
                 end
+                Notify('~r~~h~ERROR :~h~ you are not in a undercover vehicle!')
 
             else 
                 Notify('~r~~h~ERROR :~h~ you are not the driver!')
