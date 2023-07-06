@@ -49,6 +49,20 @@ RegisterCommand('beacon', function()
                         Notify('~y~Beacon added!')
                     end
 
+                elseif (model == GetHashKey('expertbana')) then
+
+                    if(IsVehicleExtraTurnedOn(vehicle,1)) then
+                        SetVehicleExtra(vehicle, 1, true)
+                        SetVehicleExtra(vehicle, 3, true)
+                        SetVehicleExtra(vehicle, 4, false)
+                        Notify('~y~Beacon removed!')
+                    else
+                        SetVehicleExtra(vehicle, 1, false)
+                        SetVehicleExtra(vehicle, 3, false)
+                        SetVehicleExtra(vehicle, 4, true)
+                        Notify('~y~Beacon added!')
+                    end
+
                 else
                     Notify('~r~~h~ERROR :~h~ you are not in a undercover vehicle!')
                 end
