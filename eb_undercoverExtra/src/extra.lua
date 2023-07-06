@@ -12,9 +12,8 @@ RegisterCommand('beacon', function()
 
             if (GetPedInVehicleSeat( vehicle, -1) == playerPed) then 
                 local model = GetEntityModel(vehicle)
-                local name = GetDisplayNameFromVehicleModel(model)
 
-                if (name == 'samu') then
+                if (model == GetHashKey('508bana')) then
 
                     if(IsVehicleExtraTurnedOn(vehicle,1)) then
                         SetVehicleExtra(vehicle, 1, true)
@@ -26,8 +25,20 @@ RegisterCommand('beacon', function()
                         Notify('~y~Beacon added!')
                     end
 
+                elseif (model == GetHashKey('cliobana')) then
+
+                    if(IsVehicleExtraTurnedOn(vehicle,8)) then
+                        SetVehicleExtra(vehicle, 8, true)
+                        SetVehicleExtra(vehicle, 9, true)
+                        Notify('~y~Beacon removed!')
+                    else
+                        SetVehicleExtra(vehicle, 8, false)
+                        SetVehicleExtra(vehicle, 9, false)
+                        Notify('~y~Beacon added!')
+                    end
+
                 else
-                    Notify('~r~~h~ERROR :~h~ you are not in a Peugeot 508 BANALISÉ!')
+                    Notify('~r~~h~ERROR :~h~ you are not in a undercover vehicle!')
                 end
 
             else 

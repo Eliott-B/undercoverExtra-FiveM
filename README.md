@@ -5,13 +5,14 @@ Add extra if `F7` is pressed
 
 ## PREREQUISITES
 - [Peugeot 508 banalisée](https://urgencesmods.fr/mods/vehicules/peugeot-508-banalisee-non-els-fivem-add-on/)
+- [Renault Clio banalisée](https://urgencesmods.fr/mods/vehicules/non-els-clio-5-banalisee-by-vmodding-victor-fivem-addon-solo/)
 
 ## HOW TO SETUP
  - Clone this repository in your ressources directory with: `git clone https://github.com/Eliott-B/undercoverExtra-FiveM`.
  - And add the script in your `ressources.cfg`.
 
 ## KEYBIND
- - `F7` : Add extra to the "Peugeot 507 BANALISEE".
+ - `F7` : Add extra to a undercover vehicle.
 
 ## CONTRIBUTORS
 
