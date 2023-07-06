@@ -10,61 +10,53 @@ RegisterCommand('beacon', function()
         if (IsPedSittingInAnyVehicle(playerPed)) then 
             local vehicle = GetVehiclePedIsIn(playerPed, false)
 
-            if (GetPedInVehicleSeat( vehicle, -1) == playerPed) then 
-                local model = GetEntityModel(vehicle)
+            if (GetPedInVehicleSeat(vehicle, -1) == playerPed) then 
+                local vehModel = GetEntityModel(vehicle)
 
-                if (model == GetHashKey('508bana')) then
+                local vehicles = {
+                    ['cliobana'] = {
+                        ['enable'] = {8, 9}
+                    },
+                    ['508bana'] = {
+                        ['enable'] = {1, 4}
+                    },
+                    ['peug_207'] = {
+                        ['enable'] = {1, 3}
+                    },
+                    ['expertbana'] = {
+                        ['enable'] = {1, 3},
+                        ['disable'] = {4}
+                    }
+                }
 
-                    if(IsVehicleExtraTurnedOn(vehicle,1)) then
-                        SetVehicleExtra(vehicle, 1, true)
-                        SetVehicleExtra(vehicle, 4, true)
-                        Notify('~y~Beacon removed!')
-                    else
-                        SetVehicleExtra(vehicle, 1, false)
-                        SetVehicleExtra(vehicle, 4, false)
-                        Notify('~y~Beacon added!')
+                for model, status in pairs(vehicles) do
+                    local hash = GetHashKey(model)
+                    if (vehModel == hash) then
+                        if (IsVehicleExtraTurnedOn(vehicle, status["enable"][1])) then
+                            for statu, extras in pairs(status) do
+                                for i = 1, #extras, 1 do
+                                    if (statu == 'enable') then
+                                        SetVehicleExtra(vehicle, extras[i], true)
+                                    else
+                                        SetVehicleExtra(vehicle, extras[i], false)
+                                    end
+                                end
+                            end
+                            Notify('~y~Beacon removed!')
+                        else
+                            for statu, extra in pairs(status) do
+                                for i = 1, #extra, 1 do
+                                    if (statu == 'enable') then
+                                        SetVehicleExtra(vehicle, extra[i], false)
+                                    else
+                                        SetVehicleExtra(vehicle, extra[i], true)
+                                    end
+                                end
+                            end
+                            Notify('~y~Beacon added!')
+                        end
+                        break
                     end
-
-                elseif (model == GetHashKey('cliobana')) then
-
-                    if(IsVehicleExtraTurnedOn(vehicle,8)) then
-                        SetVehicleExtra(vehicle, 8, true)
-                        SetVehicleExtra(vehicle, 9, true)
-                        Notify('~y~Beacon removed!')
-                    else
-                        SetVehicleExtra(vehicle, 8, false)
-                        SetVehicleExtra(vehicle, 9, false)
-                        Notify('~y~Beacon added!')
-                    end
-
-                elseif (model == GetHashKey('peug_207')) then
-
-                    if(IsVehicleExtraTurnedOn(vehicle,1)) then
-                        SetVehicleExtra(vehicle, 1, true)
-                        SetVehicleExtra(vehicle, 3, true)
-                        Notify('~y~Beacon removed!')
-                    else
-                        SetVehicleExtra(vehicle, 1, false)
-                        SetVehicleExtra(vehicle, 3, false)
-                        Notify('~y~Beacon added!')
-                    end
-
-                elseif (model == GetHashKey('expertbana')) then
-
-                    if(IsVehicleExtraTurnedOn(vehicle,1)) then
-                        SetVehicleExtra(vehicle, 1, true)
-                        SetVehicleExtra(vehicle, 3, true)
-                        SetVehicleExtra(vehicle, 4, false)
-                        Notify('~y~Beacon removed!')
-                    else
-                        SetVehicleExtra(vehicle, 1, false)
-                        SetVehicleExtra(vehicle, 3, false)
-                        SetVehicleExtra(vehicle, 4, true)
-                        Notify('~y~Beacon added!')
-                    end
-
-                else
-                    Notify('~r~~h~ERROR :~h~ you are not in a undercover vehicle!')
                 end
 
             else 
@@ -77,8 +69,8 @@ RegisterCommand('beacon', function()
     end
 end)
 
-function Notify( text )
-    SetNotificationTextEntry( "STRING" )
-    AddTextComponentString( text )
-    DrawNotification( false, false )
+function Notify(text)
+    SetNotificationTextEntry("STRING")
+    AddTextComponentString(text)
+    DrawNotification(false, false)
 end
