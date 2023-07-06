@@ -19,11 +19,11 @@ RegisterCommand('beacon', function()
                     if(IsVehicleExtraTurnedOn(vehicle,1)) then
                         SetVehicleExtra(vehicle, 1, true)
                         SetVehicleExtra(vehicle, 4, true)
-                        Notify('~y~Extra removed!')
+                        Notify('~y~Beacon removed!')
                     else
                         SetVehicleExtra(vehicle, 1, false)
                         SetVehicleExtra(vehicle, 4, false)
-                        Notify('~y~Extra added!')
+                        Notify('~y~Beacon added!')
                     end
 
                 else
