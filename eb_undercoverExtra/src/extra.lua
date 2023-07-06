@@ -27,7 +27,7 @@ RegisterCommand('beacon', function()
                     end
 
                 else
-                    Notify('~r~~h~ERROR :~h~ you are not in a Peugeot 508 BANALISÉ !')
+                    Notify('~r~~h~ERROR :~h~ you are not in a Peugeot 508 BANALISÉE !')
                 end
 
             else 
