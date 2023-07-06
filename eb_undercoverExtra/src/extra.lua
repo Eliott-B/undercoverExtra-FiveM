@@ -1,5 +1,5 @@
 -- client side
-RegisterKeyMapping('beacon', ' My Keypress Key', 'keyboard', 'f7')
+RegisterKeyMapping('beacon', 'Add/Remove beacon', 'keyboard', 'f7')
 
 RegisterCommand('beacon', function()
 
@@ -27,15 +27,15 @@ RegisterCommand('beacon', function()
                     end
 
                 else
-                    Notify('~r~~h~ERROR :~h~ you are not in a Peugeot 508 BANALISÉE !')
+                    Notify('~r~~h~ERROR :~h~ you are not in a Peugeot 508 BANALISÉ!')
                 end
 
             else 
-                Notify('~r~~h~ERROR :~h~ you are not the driver !')
+                Notify('~r~~h~ERROR :~h~ you are not the driver!')
             end 
 
         else
-            Notify('~r~~h~ERROR :~h~ you are not in a vehicule !')
+            Notify('~r~~h~ERROR :~h~ you are not in a vehicule!')
         end 
     end
 end)
