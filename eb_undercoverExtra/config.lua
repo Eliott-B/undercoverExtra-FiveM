@@ -13,5 +13,8 @@ Config.VehiclesModels = {
     ["expertbana"] = {
         ["group1"] = {1, 3},
         ["group2"] = {4}
+    },
+    ["3082022bana"] = {
+        ["group1"] = {8, 9}
     }
 }
