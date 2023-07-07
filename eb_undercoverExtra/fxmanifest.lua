@@ -5,6 +5,6 @@ author 'Eliott-B'
 description 'Add extra on undercover car if F7 is pressed.'
 version '1.0.0'
 
-resource_type 'gametype'
+client_script 'cl_undercoverextra.lua'
 
-client_script 'src/extra.lua'
+shared_script "config.lua"

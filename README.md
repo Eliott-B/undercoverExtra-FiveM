@@ -13,12 +13,17 @@ Add extra if `F7` is pressed
  - Clone this repository in your ressources directory with: `git clone https://github.com/Eliott-B/undercoverExtra-FiveM`.
  - And add the script in your `ressources.cfg`.
 
+**⚠️ WARNING ⚠️**: Remove the extra 4 for the PEUGEOT EXPERT before using the script.
+
 ## KEYBIND
  - `F7` : Add extra to a undercover vehicle.
 
 ## CONTRIBUTORS
 
 - [Eliott-B](https://github.com/Eliott-B)
+- [JellyPh1sh](https://github.com/jellyph1sh)
+
+Thanks to JellyPhish to help me for the optimisation of this script.
 
 ## HELP
 
