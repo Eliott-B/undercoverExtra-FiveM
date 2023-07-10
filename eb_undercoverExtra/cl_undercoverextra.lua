@@ -35,6 +35,10 @@ RegisterCommand("beacon", function()
     end
     local veh = GetVehiclePedIsUsing(ped)
     local model = GetVehicleModel(vehModels, veh)
+    if (vehModels[model] == nil) then
+        Notify("~r~[ERROR] It's not an undercover vehicle!")
+        return
+    end
     for group, extra in pairs(vehModels[model]) do
         -- true = désactivé; false = activé
         local isActivated = IsVehicleExtraTurnedOn(veh, vehModels[model][group][1])
