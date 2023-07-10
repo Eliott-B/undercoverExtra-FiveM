@@ -10,11 +10,11 @@ Config.VehiclesModels = {
     ["peug_207"] = {
         ["group1"] = {1, 3}
     },
+    ["3082022bana"] = {
+        ["group1"] = {8, 9}
+    },
     ["expertbana"] = {
         ["group1"] = {1, 3},
         ["group2"] = {4}
-    },
-    ["3082022bana"] = {
-        ["group1"] = {8, 9}
     }
 }
